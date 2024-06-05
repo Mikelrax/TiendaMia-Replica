@@ -1,0 +1,13 @@
+.global {
+    margin: 0 !important;
+    padding: 0 !important;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: #F4F4F4;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-family: sans-serif;
+    overflow-x: hidden;
+}

@@ -1,0 +1,110 @@
+[
+  {
+    "id": 1,
+    "title": "iPad Pro 12.9",
+    "description": "The iPad Pro 12.9 is a stunning piece of technology, boasting a large 12.9-inch Retina display with ProMotion technology. With 256GB of storage, this iPad provides ample space for all your files, apps, and multimedia content. The sleek and slim design, combined with the silver color, gives it a sophisticated look. Enjoy seamless connectivity with the WiFi feature.",
+    "price": 900000,
+    "stock": 10,
+    "images": [
+      "https://i.postimg.cc/kX8PKZpq/ipad.jpg",
+      "https://i.postimg.cc/jqBrWKvM/ipad2.jpg"
+    ],
+    "colors": [
+      "Silver",
+      "Space Gray",
+      "Gold",
+      "Rose Gold"
+    ],
+    "onsale": true
+  },
+  {
+    "id": 2,
+    "title": "MacBook Pro 13",
+    "description": "Capture your memorable moments with the high-quality camera and relive them on the impressive screen. Whether you're a professional artist, student, or just someone who appreciates cutting-edge technology, the iPad Pro 12.9 is a versatile device that meets all your needs.",
+    "price": 900000,
+    "stock": 10,
+    "images": [
+      "https://i.postimg.cc/kX8PKZpq/ipad.jpg",
+      "https://i.postimg.cc/jqBrWKvM/ipad2.jpg"
+    ],
+    "colors": [
+      "Silver",
+      "Space Gray",
+      "Gold",
+      "Rose Gold"
+    ],
+    "onsale": false
+  },
+  {
+    "id": 3,
+    "title": "MacBook Pro 13",
+    "description": "Capture your memorable moments with the high-quality camera and relive them on the impressive screen. Whether you're a professional artist, student, or just someone who appreciates cutting-edge technology, the iPad Pro 12.9 is a versatile device that meets all your needs.",
+    "price": 900000,
+    "stock": 10,
+    "images": [
+      "https://i.postimg.cc/kX8PKZpq/ipad.jpg",
+      "https://i.postimg.cc/jqBrWKvM/ipad2.jpg"
+    ],
+    "colors": [
+      "Silver",
+      "Space Gray",
+      "Gold",
+      "Rose Gold"
+    ],
+    "onsale": false
+  },
+  {
+    "id": 4,
+    "title": "MacBook Pro 13",
+    "description": "Capture your memorable moments with the high-quality camera and relive them on the impressive screen. Whether you're a professional artist, student, or just someone who appreciates cutting-edge technology, the iPad Pro 12.9 is a versatile device that meets all your needs.",
+    "price": 900000,
+    "stock": 10,
+    "images": [
+      "https://i.postimg.cc/kX8PKZpq/ipad.jpg",
+      "https://i.postimg.cc/jqBrWKvM/ipad2.jpg"
+    ],
+    "colors": [
+      "Silver",
+      "Space Gray",
+      "Gold",
+      "Rose Gold"
+    ],
+    "onsale": false
+  },
+  {
+    "id": 5,
+    "title": "MacBook Pro 13",
+    "description": "Capture your memorable moments with the high-quality camera and relive them on the impressive screen. Whether you're a professional artist, student, or just someone who appreciates cutting-edge technology, the iPad Pro 12.9 is a versatile device that meets all your needs.",
+    "price": 900000,
+    "stock": 10,
+    "images": [
+      "https://i.postimg.cc/kX8PKZpq/ipad.jpg",
+      "https://i.postimg.cc/jqBrWKvM/ipad2.jpg"
+    ],
+    "colors": [
+      "Silver",
+      "Space Gray",
+      "Gold",
+      "Rose Gold"
+    ],
+    "onsale": false
+  },
+  {
+    "id": 6,
+    "title": "MacBook Pro 13",
+    "description": "Capture your memorable moments with the high-quality camera and relive them on the impressive screen. Whether you're a professional artist, student, or just someone who appreciates cutting-edge technology, the iPad Pro 12.9 is a versatile device that meets all your needs.",
+    "price": 900000,
+    "stock": 10,
+    "images": [
+      "https://i.postimg.cc/kX8PKZpq/ipad.jpg",
+      "https://i.postimg.cc/jqBrWKvM/ipad2.jpg"
+    ],
+    "colors": [
+      "Silver",
+      "Space Gray",
+      "Gold",
+      "Rose Gold"
+    ],
+    "onsale": false
+  }
+]

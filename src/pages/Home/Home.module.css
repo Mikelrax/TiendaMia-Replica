@@ -1,0 +1,32 @@
+/* MAIN PRODUCTS */
+.product-container {
+  width: 1080px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+@media (min-width: 1080px) {
+  .carousel-item img {
+    object-fit: contain;
+  }
+}
+
+/* @media (min-width:576px) {
+  .nav-a {
+    font-size: 12px;
+  }
+}
+@media (min-width:768px) {
+  .nav-div {
+    width: 100%;
+  }
+  .nav-a {
+    font-size: 14px;
+  }
+}
+@media (min-width:1080px) {
+  nav {
+    width: 1080px;
+  }
+} */

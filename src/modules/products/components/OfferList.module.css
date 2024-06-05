@@ -1,0 +1,93 @@
+:root {
+    --primary-color: #F4F4F4;
+    --background-color: #F4F4F4;
+    --text-color: #777;
+    --link-color: #007bff;
+}
+
+.offersContainer {
+    display: flex;
+    padding: 20px;
+    background-color: var(--primary-color);
+    position: relative;
+    padding-top: 130px;
+    margin-top: 50px;
+    padding-bottom: 10px;
+    margin-bottom: 50px;
+    justify-content: center;
+}
+/*
+.offersContainer::before {
+    content: "";
+    height: 50px;
+    width: 100%;
+    background: rgb(162, 105, 185);
+    background: linear-gradient(0deg, var(--primary-color) 0%, var(--background-color) 100%);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.offersContainer::after {
+    content: "";
+    height: 50px;
+    width: 100%;
+    background: rgb(162, 105, 185);
+    background: linear-gradient(0deg, var(--background-color) 0%, var(--primary-color) 100%);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    align-items: center;
+}
+*/
+.productCard {
+    max-width: 30%;
+    min-width: 280px;
+    transition: all 0.3s ease-in-out;
+}
+
+.productCard:hover {
+    scale: 1.05;
+}
+
+.offersHeader {
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    color: var(--text-color);
+    height: 50px;
+    position: absolute;
+    top: 0;
+}
+
+.offersTitle {
+    width: 100%;
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+.offersSubtitle {
+    width: 60%;
+    font-size: 1.4rem;
+    text-align: center;
+    a{
+        color: var(--link-color);
+        text-decoration: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .productCard {
+        flex: 1 1 45%;
+        max-width: 45%;
+    }
+}
+
+@media (max-width: 480px) {
+    .productCard {
+        flex: 1 0 100%;
+        max-width: 100%;
+        margin: 0;
+    }
+}

@@ -1,0 +1,34 @@
+.sliderContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+.slider-container .slider {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+
+@media screen and (max-width: 768px) {
+    .slider-container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        margin: 0 20px;
+    }
+
+    .slider-container .slider {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+    }
+}
