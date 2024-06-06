@@ -1,11 +1,13 @@
+import Footer from "../../modules/common/components/Footer/Footer";
 import NavBar from "../../modules/common/components/NavBar/NavBar";
-import ShowSearchComponent from "../../modules/search/Components/ShowSearchComponent/ShowSearchComponent";
+import MainComponent from "../../modules/search/Components/MainComponent/MainComponent";
 
 const Shop = () => {
     return (
         <>
             <NavBar />
-            <ShowSearchComponent></ShowSearchComponent>
+            <MainComponent></MainComponent>
+            <Footer/>
         </>
     )
 }

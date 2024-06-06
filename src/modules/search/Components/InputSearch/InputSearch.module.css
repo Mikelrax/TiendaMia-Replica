@@ -1,0 +1,15 @@
+.header-form {
+  justify-content: center;
+  width: 500px;
+}
+
+.header-input {
+  height: 60px;
+  border-radius: 15px;
+  border: none;
+  width: 100%;
+  padding: 10px;
+  margin: 0 20px;
+  font-size: 14px;
+  text-align: center;
+}

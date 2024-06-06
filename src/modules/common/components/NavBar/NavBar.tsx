@@ -3,7 +3,7 @@ import styles from "./NavBar.module.css";
 import Logo from "./Logo.tsx";
 import config from "../../../../../public/store-config.json";
 import SocialLink from "./SocialLink.tsx";
-import SearchComponent from "../../../search/Components/SearchComponent/SearchComponent.tsx";
+import InputSearch from "../../../search/Components/InputSearch/InputSearch.tsx";
 const NavBar = () => {
   const { logo, navLinks, socialLinks } = config;
 
@@ -12,7 +12,7 @@ const NavBar = () => {
       <header>
         <div className={styles["header-container"]}>
           <Logo logo={logo} />
-          <SearchComponent />
+          <InputSearch />
           <ul className={styles["header-social"]}>
             {socialLinks.map((socialLink, index) => (
               <SocialLink

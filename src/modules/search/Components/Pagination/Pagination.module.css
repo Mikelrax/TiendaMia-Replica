@@ -1,0 +1,29 @@
+
+li {
+    list-style: none;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem;
+}
+
+.break-link {
+    background-color: var(--btn-bg, #f0f0f0);
+    color: var(--btn-color, #000);
+    border: 1px solid var(--btn-border, #ccc);
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+}
+.break-link:hover {
+    background-color: var(--btn-hover-bg, #ddd);
+}
+@media (max-width: 768px) {
+    .pagination {
+        flex-wrap: wrap;
+    }
+}

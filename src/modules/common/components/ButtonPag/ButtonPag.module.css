@@ -1,0 +1,27 @@
+.page-btn {
+    background-color: var(--btn-bg, #f0f0f0);
+    color: var(--btn-color, #000);
+    border: 1px solid var(--btn-border, #ccc);
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.page-btn:hover {
+    background-color: var(--btn-hover-bg, #ddd);
+}
+
+@media (prefers-color-scheme: dark) {
+    .page-btn {
+        --btn-bg: #333;
+        --btn-color: #fff;
+        --btn-border: #555;
+        --btn-hover-bg: #444;
+    }
+}
+
+@media (max-width: 768px) {
+    .page-btn {
+        flex: 1 1 auto;
+    }
+}

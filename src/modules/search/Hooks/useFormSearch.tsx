@@ -1,13 +1,6 @@
 import { useState, useEffect } from "react";
-import { useSearch } from "./useSearch"; // Asegúrate de tener la ruta correcta
-
-interface Product {
-    id: number;
-    name: string;
-    price: number;
-    image: string;
-    category: string;
-}
+import { useSearchData } from "./useSearchData";
+import { type Product } from "../Types/Product";
 
 export const useFormSearch = (initialProducts: Product[]) => {
     const [products, setProducts] = useState<Product[]>(initialProducts);
@@ -15,7 +8,7 @@ export const useFormSearch = (initialProducts: Product[]) => {
 
     useEffect(() => {
         const fetchSearchResults = async () => {
-            const result = await useSearch(searchTerm);
+            const result = await useSearchData(searchTerm);
             setProducts(result);
         };
 

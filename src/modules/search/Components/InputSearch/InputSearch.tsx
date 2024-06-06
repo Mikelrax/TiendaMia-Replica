@@ -1,8 +1,11 @@
-import styles from "./SearchComponent.module.css";
+import styles from "./InputSearch.module.css";
 import { useEffect, useState } from "react";
 import { useSetWindowPath } from "../../Hooks/useSetWindowPath";
-const SearchComponent = () => {
+import { useSearch } from "../../Providers/SearchContextProvider";
+
+const InputSearch= () => {
     const [searchTermWindow, setSearchTermWindow] = useState("");
+    const { setSearchTerm } = useSearch();
 
     useEffect(() => {
         useSetWindowPath(searchTermWindow);
@@ -14,6 +17,8 @@ const SearchComponent = () => {
             search: { value: string };
         };
         const searchTerm = target.search.value;
+        
+        setSearchTerm(searchTerm);
         setSearchTermWindow(searchTerm);
     };
 
@@ -33,4 +38,4 @@ const SearchComponent = () => {
     );
 };
 
-export default SearchComponent;
+export default InputSearch;
