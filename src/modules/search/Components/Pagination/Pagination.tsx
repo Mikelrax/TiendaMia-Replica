@@ -1,10 +1,10 @@
 import ReactPaginate from "react-paginate";
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import { Product } from "../../Types/Product";
 import ProductCardSearch from "../ProductCardSearch/ProductCardSearch";
 import ButtonPag from "../../../common/components/ButtonPag/ButtonPag";
 import styles from "./Pagination.module.css";
-
+import { ProductCardSearchSkeleton } from "../../../skeletons/Skeletons";
 interface ProductProps {
     products: Product[];
 }
@@ -14,7 +14,9 @@ function Items({ products }: ProductProps) {
         <>
             <div className="product-cards">
                 {products.map((product) => (
-                    <ProductCardSearch key={product.id} product={product} />
+                    <Suspense key={product.id} fallback={<ProductCardSearchSkeleton />}>
+                        <ProductCardSearch product={product} />
+                    </Suspense>
                 ))}
             </div>
         </>
@@ -43,17 +45,20 @@ function PaginatedItems({ itemsPerPage, products }: PaginationProps) {
     return (
         <>
             <Items products={currentItems} />
-            <ReactPaginate
-                className={styles["pagination"]}
-                breakLabel="<div>...</div>"
-                nextLabel={<ButtonPag> next {">"}</ButtonPag>}
-                onPageChange={handlePageClick}
-                pageRangeDisplayed={5}
-                pageCount={pageCount}
-                pageLinkClassName={styles["break-link"]}
-                previousLabel={<ButtonPag>{"<"} prev </ButtonPag>}  
-                renderOnZeroPageCount={null}
-            />
+            <Suspense fallback={<div>loading...</div>}>
+                <ReactPaginate
+                    className={styles["pagination"]}
+                    breakLabel="<div>...</div>"
+                    nextLabel={<ButtonPag> {">"}</ButtonPag>}
+                    onPageChange={handlePageClick}
+                    pageRangeDisplayed={5}
+                    pageCount={pageCount}
+                    pageLinkClassName={styles["break-link"]}
+                    previousLabel={<ButtonPag>{"<"} </ButtonPag>}
+                    renderOnZeroPageCount={null}
+
+                />
+            </Suspense>
         </>
     );
 }
