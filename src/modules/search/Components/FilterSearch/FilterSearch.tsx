@@ -1,17 +1,14 @@
 import { useEffect } from "react";
 import { getCategories } from "../../../constant/getCategories";
 
-interface categoriesProps {
-    categories: string[];
+export interface categoriesProps {
     setCategories: any;
 }
 const componentCategories = getCategories();
+componentCategories.unshift("Todas");
 
-const FilterSearch = ({categories, setCategories}: categoriesProps) => {
-    useEffect(() => {
-        setCategories("hola");
-        console.log(categories)
-    },[]);
+
+const FilterSearch = ({ setCategories}: categoriesProps) => {
 
     return (
         <div>

@@ -4,17 +4,38 @@ import { useEffect, useState } from "react";
 import { Product } from "../../Types/Product";
 import { useSearchData } from "../../Hooks/useSearchData";
 import PaginatedItems from "../Pagination/Pagination";
-import FilterSearch from "../FilterSearch/FilterSearch";
+import MenuDeployed from "../MenuDeployed/MenuDeployed";
+import filterArrayProducts from "../../utils/filterArrayProducts";
+import RestartAltIcon from '@mui/icons-material/RestartAlt';
+import { getProducts } from "../../../constant/getProducts";
+import { useSetWindowPath } from "../../Hooks/useSetWindowPath";
+
 const MainComponent = () => {
-    const { searchTerm } = useSearch();
+    const productData = getProducts();
+    const { searchTerm, setSearchTerm } = useSearch();
     const [products, setProducts] = useState<Product[]>([]);
     const [categories, setCategories] = useState<string[]>([]);
+    const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
+
+    const resetFilters = () => {
+        setCategories([]);
+        setFilteredProducts(productData);
+        setProducts(productData);
+        useSetWindowPath("");
+        setSearchTerm("");
+    };
 
     useEffect(() => {
-        setProducts(useSearchData(searchTerm));
+        const searchResults = useSearchData(searchTerm);
+        setProducts(searchResults);
     }, [searchTerm]);
 
-    const checkProducts = products.length === 0 ? "No hay resultados" : `${products.length} resultados`;
+    useEffect(() => {
+        const filtered = filterArrayProducts(categories, searchTerm);
+        setFilteredProducts(filtered);
+    }, [categories, searchTerm]);
+
+    const checkProducts = filteredProducts.length === 0 ? <strong>No hay resultados</strong> : `${filteredProducts.length} resultados`;
 
     return (
         <>
@@ -23,9 +44,16 @@ const MainComponent = () => {
                     <h2>{searchTerm}</h2>
                     <div className="">{checkProducts}</div>
                 </div>
-                <div className="component component-2"><FilterSearch categories={categories} setCategories={setCategories} /></div>
+                <div className="component component-2">
+                    <MenuDeployed setCategories={setCategories} />
+                    <div>
+                        <button className="button-restart" onClick={resetFilters}>
+                            <RestartAltIcon />
+                        </button>
+                    </div>
+                </div>
                 <div className="component component-3">
-                    <PaginatedItems itemsPerPage={4} products={products} />
+                    <PaginatedItems itemsPerPage={4} products={filteredProducts} />
                 </div>
             </div>
         </>
@@ -33,4 +61,3 @@ const MainComponent = () => {
 };
 
 export default MainComponent;
-

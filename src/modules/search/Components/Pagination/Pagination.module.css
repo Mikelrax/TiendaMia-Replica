@@ -3,6 +3,10 @@ li {
     list-style: none;
 }
 
+.page {
+    background-color: #000;
+}
+
 .pagination {
     display: flex;
     justify-content: center;

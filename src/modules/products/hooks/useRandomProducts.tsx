@@ -33,3 +33,8 @@ const useRandomProducts = (categorie: Category, offersLength: number) => {
 };
 
 export default useRandomProducts;
+
+function filterProducts(categorie: Category) {
+    const filteredProducts = products.filter(product => product.category === categorie);
+    return filteredProducts;
+}

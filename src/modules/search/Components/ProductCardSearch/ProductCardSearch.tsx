@@ -9,7 +9,7 @@ export default function ProductCardSearch({ product }: { product: Product }) {
             <div className="product-cards">
                 <div className="card">
                     <Suspense fallback={<ProductImageSkeleton />}>
-                        <ImageWithSkeleton src={product.image} alt={product.name} />
+                        <ImageWithSkeleton src={product.image} alt={product.name} classNameImage="" />
                     </Suspense>
                     <div className="badge"></div>
                     <h3>{product.name}</h3>

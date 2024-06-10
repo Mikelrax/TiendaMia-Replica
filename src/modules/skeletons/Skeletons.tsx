@@ -23,7 +23,7 @@ export const ProductImageSkeleton = () => {
     )
 }
 
-export function ImageWithSkeleton({ src, alt } : { src: string, alt: string }) {
+export function ImageWithSkeleton({ src, alt, classNameImage = "" } : { src: string, alt: string, classNameImage: string }) {
     const { loaded, error } = useImage(src);
 
     if (error) {
@@ -33,7 +33,7 @@ export function ImageWithSkeleton({ src, alt } : { src: string, alt: string }) {
     return (
         <div>
             {!loaded && <ProductImageSkeleton />}
-            {loaded && <img src={src} alt={alt} />}
+            {loaded && <img src={src} alt={alt} className={classNameImage} />}
         </div>
     );
 }
