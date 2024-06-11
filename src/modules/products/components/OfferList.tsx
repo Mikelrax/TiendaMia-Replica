@@ -13,7 +13,7 @@ interface OfferListProps {
 
 const OfferList = ({ categorie }: OfferListProps) => {
 
-    const offersLength = 6;
+    const offersLength = 5;
     var selectedProducts = useRandomProducts(categorie, offersLength);
     if(categorie === "all"){selectedProducts = products;}
     const checkSelectedProducts = selectedProducts ? selectedProducts.length : 0;

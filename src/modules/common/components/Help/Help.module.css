@@ -1,0 +1,56 @@
+.container {
+  text-align: center;
+  padding: 20px;
+}
+
+.highlight {
+  color: red;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  justify-items: center;
+  margin-top: 20px;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+  max-width: 300px;
+}
+
+.card img {
+  margin-bottom: 15px;
+}
+
+.card p {
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+.card a {
+  color: red;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  .container {
+    color: #fff;
+  }
+
+  .card {
+    background: #333;
+    border-color: #444;
+  }
+
+  .highlight {
+    color: #ff4d4d;
+  }
+}

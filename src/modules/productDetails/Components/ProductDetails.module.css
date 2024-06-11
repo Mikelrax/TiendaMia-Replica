@@ -1,0 +1,125 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+.product-images,
+.product-details,
+.product-purchase {
+    flex: 1 1 300px;
+}
+
+.thumbnail-images {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.thumbnail-images img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+
+.main-image img {
+    width: 100%;
+    height: auto;
+}
+
+.product-details h1 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.product-details ul {
+    list-style: none;
+    padding: 0;
+}
+
+.product-details ul li {
+    margin-bottom: 5px;
+}
+
+.product-details .note {
+    font-size: 0.9em;
+    color: gray;
+}
+
+.product-details .availability .in-stock {
+    color: green;
+}
+
+.product-purchase .price {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.product-purchase .original-price {
+    text-decoration: line-through;
+    color: gray;
+}
+
+.product-purchase .discounted-price {
+    color: red;
+    font-weight: bold;
+}
+
+.product-purchase .free-shipping {
+    color: purple;
+    font-weight: bold;
+}
+
+.product-purchase .guarantee,
+.product-purchase .add-to-cart,
+.product-purchase .delivery,
+.product-purchase .discount {
+    margin-bottom: 10px;
+}
+
+.product-purchase .express {
+    color: orange;
+    font-weight: bold;
+}
+
+.product-purchase .quantity {
+    margin-bottom: 10px;
+}
+
+.product-purchase .buy-button,
+.product-purchase .add-to-cart-button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.product-purchase .buy-button {
+    background-color: red;
+    color: white;
+}
+
+.product-purchase .add-to-cart-button {
+    background-color: lightgray;
+}
+
+@media (prefers-color-scheme: dark) {
+    .container {
+        background-color: #333;
+        color: #fff;
+    }
+
+    .product-details .note {
+        color: lightgray;
+    }
+
+    .product-purchase .original-price {
+        color: lightgray;
+    }
+
+    .product-purchase .free-shipping {
+        color: lightpink;
+    }
+}

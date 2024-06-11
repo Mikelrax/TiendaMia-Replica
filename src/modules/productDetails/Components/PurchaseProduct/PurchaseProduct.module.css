@@ -1,0 +1,139 @@
+/* Details.module.css */
+
+:root {
+  --bg-color: #fff;
+  --border-color: #e0e0e0;
+  --text-primary: #333;
+  --text-muted: #999;
+  --button-bg: #9b59b6;
+  --button-text: #fff;
+  --buy-now-bg: #e74c3c;
+  --add-to-cart-bg: #f39c12;
+}
+
+.product-card {
+  width: 60%;
+  max-width: 400px;
+  height: auto;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  background-color: var(--bg-color);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.price-section {
+  text-align: left;
+  margin-bottom: 15px;
+}
+
+.original-price,
+.savings {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.current-price {
+  font-size: 24px;
+  color: var(--text-primary);
+}
+
+.free-shipping {
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.free-shipping:hover {
+  background-color: darken(var(--button-bg), 10%);
+}
+
+.product-info p {
+  font-size: 14px;
+  color: var(--text-primary);
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+.product-info img {
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+.quantity-section {
+  margin: 15px 0;
+  text-align: center;
+}
+
+.quantity-section input {
+  width: 50px;
+  text-align: center;
+  padding: 5px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+}
+
+.button-section {
+  text-align: center;
+}
+
+.buy-now,
+.add-to-cart {
+  display: block;
+  width: 80%;
+  max-width: 250px;
+  margin: 10px auto;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: var(--button-text);
+  transition: background-color 0.3s;
+}
+
+.buy-now {
+  background-color: var(--buy-now-bg);
+}
+
+.buy-now:hover {
+  background-color: darken(var(--buy-now-bg), 10%);
+}
+
+.add-to-cart {
+  background-color: var(--add-to-cart-bg);
+}
+
+.add-to-cart:hover {
+  background-color: darken(var(--add-to-cart-bg), 10%);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+      --bg-color: #333;
+      --border-color: #555;
+      --text-primary: #fff;
+      --text-muted: #bbb;
+      --button-bg: #8e44ad;
+      --button-text: #fff;
+      --buy-now-bg: #c0392b;
+      --add-to-cart-bg: #e67e22;
+  }
+}
+
+@media (min-width: 768px) {
+  .product-card {
+      max-width: 500px;
+  }
+}
