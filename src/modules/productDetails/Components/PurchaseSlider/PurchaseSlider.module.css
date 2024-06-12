@@ -1,0 +1,9 @@
+.slider-container {
+    width: 80%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100px;
+    margin: 30px;
+}

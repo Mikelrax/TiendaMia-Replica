@@ -1,25 +1,24 @@
 import ImageGallery from "react-image-gallery";
 import React from "react";
 import "react-image-gallery/styles/css/image-gallery.css";
-import config from "../../../../../public/store-config.json";
 
-const { SliderImages } = config;
-
-const SliderRaw = () => {
+const SliderRaw = ( { img } ) => {
+    const images = [{
+        original: img,
+        thumbnail: img
+    }]
     class MyGallery extends React.Component {
         render() {
             return <ImageGallery
-                items={SliderImages}
-                autoPlay={true}
-                infinite={true}
+                items={images}
                 showPlayButton={false}
-                showFullscreenButton={false}
-                showBullets={true}
-                showThumbnails={false}
+                showFullscreenButton={true}
+                showBullets={false}
+                showThumbnails={true}
+                thumbnailPosition="left"
             />;
         }
     }
-
     return <MyGallery />;
 };
 

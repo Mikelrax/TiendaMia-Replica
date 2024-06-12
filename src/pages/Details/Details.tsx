@@ -3,8 +3,7 @@ import { useParams } from "react-router-dom";
 import getDataById from "../../modules/productDetails/utils/getDataById";
 import NavBar from "../../modules/common/components/NavBar/NavBar";
 import ProductDetails from "../../modules/productDetails/Components/ProductDetails";
-
-console.log("Details");
+import Footer from "../../modules/common/components/Footer/Footer";
 
 const Details = () => {
     const { id } = useParams();
@@ -23,11 +22,8 @@ const Details = () => {
     return (
         <>
             <NavBar />
-            <div key={data.id}>
-                <h1>{data.name}</h1>
-                <p>{data.description}</p>
-            </div>
-            <ProductDetails />
+            <ProductDetails id={id} />
+            <Footer />
         </>
     );
 };
