@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
+import { toast } from "react-toastify";
 
 const useFavorite = (id: number) => {
+    const resolveAfter1Sec = new Promise(resolve => setTimeout(resolve, 1000));
     const [favorite, setFavorite] = useState(false);
     const [loading, setLoading] = useState(true);
 
@@ -18,18 +20,19 @@ const useFavorite = (id: number) => {
             setLoading(true);
             const storedFavorites = localStorage.getItem("favorites");
             let favoritesArray = storedFavorites ? JSON.parse(storedFavorites) : [];
-
             if (favoritesArray.includes(id)) {
                 favoritesArray = favoritesArray.filter((favoriteId: number) => favoriteId !== id);
+                toast.error("Producto eliminado de favoritos");
                 setFavorite(false);
             } else {
                 favoritesArray.push(id);
+                toast.success("Producto agregado a favoritos");
                 setFavorite(true);
             }
 
             localStorage.setItem("favorites", JSON.stringify(favoritesArray));
             setLoading(false);
-        }, 1000);
+        }, 500);
     };
 
     return { favorite, toggleFavorite, loading };

@@ -1,4 +1,5 @@
 .info-banner-container {
+    padding: 40px 0;
     display: flex;
     justify-content: center;
     width: 100%;

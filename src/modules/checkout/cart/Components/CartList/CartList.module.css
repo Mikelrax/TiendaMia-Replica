@@ -1,0 +1,144 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.products,
+.order-summary {
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.products {
+    flex: 2;
+}
+
+.order-summary {
+    flex: 1;
+}
+
+.product-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.product-header .flag {
+    font-size: 24px;
+}
+
+.product {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.product img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.product-details {
+    flex: 1;
+}
+
+.product-details h4 {
+    margin: 0 0 10px;
+}
+
+.product-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.product-actions button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.product-price {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.delivery-time {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: green;
+    font-weight: bold;
+}
+
+.order-summary h3 {
+    margin-top: 0;
+}
+
+.order-details p,
+.subtotal p,
+.discount p,
+.coupon p,
+.guarantee p {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+.checkout-button,
+.continue-button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    margin: 10px 0;
+}
+
+.checkout-button {
+    background-color: red;
+    color: white;
+}
+
+.continue-button {
+    background-color: white;
+    color: red;
+    border: 1px solid red;
+}
+
+.coupon input {
+    width: calc(100% - 80px);
+    padding: 10px;
+    margin-right: 10px;
+}
+
+.coupon button {
+    padding: 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.guarantee a {
+    color: blue;
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .products,
+    .order-summary {
+        width: 100%;
+    }
+}

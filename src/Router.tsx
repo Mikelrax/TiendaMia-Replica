@@ -7,13 +7,17 @@ import { SearchContextProvider } from './modules/search/Providers/SearchContextP
 import Details from './pages/Details/Details';
 import Categories from './pages/Categories/Categories';
 import HowBuy from './pages/HowBuy/HowBuy';
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
+import Cart from './pages/Cart/Cart';
 
 const browserRouter = createBrowserRouter([
   { path: "/", element: <Home /> },
   { path: "/shop", element: <Shop /> },
   { path: "/details/:id", element: <Details /> },
   { path: "/categories", element: <Categories /> },
-  { path: "/how-buy", element: <HowBuy />},
+  { path: "/how-buy", element: <HowBuy /> },
+  { path: "/cart", element: <Cart /> },
 ]);
 
 function Router() {
@@ -24,6 +28,18 @@ function Router() {
         <SearchContextProvider>
           <RouterProvider router={browserRouter} />
         </SearchContextProvider>
+        <ToastContainer
+          position="bottom-left"
+          autoClose={3000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+        />
       </div>
     </>
   )

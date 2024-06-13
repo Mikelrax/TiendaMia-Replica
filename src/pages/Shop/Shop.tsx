@@ -14,7 +14,7 @@ const Shop = () => {
         <>
             <NavBar />
             <MainComponent></MainComponent>
-            <OfferList categorie={ checkCategories } />
+            <OfferList categorie={checkCategories} />
             <Footer />
         </>
     )

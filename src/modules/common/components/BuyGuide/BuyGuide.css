@@ -1,0 +1,50 @@
+.buy-guide-container {
+    display: flex;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    padding: 40px 0;
+}
+
+
+.steps-container {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.step img {
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+@media (min-width: 768px) {
+    .steps-container {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .steps-container {
+        background-color: #333;
+        color: #fff;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    .steps-container {
+        background-color: #fff;
+        color: #000;
+    }
+}
