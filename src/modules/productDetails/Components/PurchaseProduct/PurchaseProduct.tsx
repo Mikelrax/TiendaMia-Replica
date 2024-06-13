@@ -1,17 +1,40 @@
 import { Favorite } from "@mui/icons-material";
 import styles from "./PurchaseProduct.module.css";
 import GradeIcon from '@mui/icons-material/Grade';
-function PurchaseProduct() {
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import useFavorite from "../../Hooks/useFavorite";
+
+interface PurchaseProductProps {
+  id: number;
+  price: number;
+  verified: boolean;
+  stock: number;
+}
+
+function PurchaseProduct({ id, price, verified, stock }: PurchaseProductProps) {
+
+  console.log(id, price, verified, stock);
+
+  const checkStock = stock === undefined || stock === 0;
+
+  const { favorite, toggleFavorite, loading } = useFavorite(id);
+  console.log(favorite)
   return (
     <div className={styles["product-card"]}>
       <div className={styles["product-favorite"]}>
-        <Favorite className={styles["favorite-icon"]} />
+        <button onClick={toggleFavorite} disabled={loading} className={styles["favorite-button"]}>
+          {favorite ?
+            <Favorite className={styles["favorite-icon"]} />
+            :
+            <FavoriteBorderIcon className={styles["favorite-icon"] + " " + styles["favorite-icon-loading"]} />
+          }
+        </button>
       </div>
       <div className={styles["price-section"]}>
-        <p className={styles["original-price"]}>Precio: <s>S/ 1,864</s></p>
-        <p className={styles["savings"]}>Ahorras: S/ 872 (50%)</p>
-        <h2 className={styles["current-price"]}>S/ 989</h2>
-        <button className={styles["free-shipping"]}>ENVÍO GRATIS</button>
+        <p className={styles["original-price"]}>Precio: <s>S/ {price * 2}</s></p>
+        <p className={styles["savings"]}>Ahorras: S/ {price * 2 - price} (50%)</p>
+        <h2 className={styles["current-price"]}>S/ {price}</h2>
+        <button className={styles["free-shipping"]}>{verified ? "ENVÍO GRATIS" : "ENVÍO DIRECTO"}</button>
       </div>
       <div className={styles["product-info"]}>
         <p><GradeIcon style={{ color: "red", paddingTop: "5px" }} /> Este producto tiene Garantía de Entrega</p>
@@ -22,11 +45,11 @@ function PurchaseProduct() {
       </div>
       <div className={styles["quantity-section"]}>
         <label htmlFor="quantity">Cantidad:</label>
-        <input type="number" id="quantity" name="quantity" defaultValue="1" min="1" />
+        <input type="number" id="quantity" name="quantity" defaultValue="1" min="1" max={stock} disabled={checkStock} />
       </div>
       <div className={styles["button-section"]}>
-        <button className={styles["buy-now"]}>Comprar</button>
-        <button className={styles["add-to-cart"]}>Agregar al carrito</button>
+        <button className={styles["buy-now"]} disabled={checkStock}>Comprar</button>
+        <button className={styles["add-to-cart"]} disabled={checkStock}>Agregar al carrito</button>
       </div>
     </div>
   );

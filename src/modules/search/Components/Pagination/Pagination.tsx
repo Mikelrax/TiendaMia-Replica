@@ -48,7 +48,7 @@ function PaginatedItems({ itemsPerPage, products }: PaginationProps) {
             <Suspense fallback={<div>loading...</div>}>
                 <ReactPaginate
                     className={styles["pagination"]}
-                    breakLabel="<div>...</div>"
+                    breakLabel="....."
                     nextLabel={<ButtonPag> {">"}</ButtonPag>}
                     onPageChange={handlePageClick}
                     pageRangeDisplayed={5}

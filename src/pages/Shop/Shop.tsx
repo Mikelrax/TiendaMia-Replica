@@ -6,7 +6,7 @@ import { getCategories } from "../../modules/constant/getCategories";
 
 const Shop = () => {
     const categoriesData = getCategories();
-    const mathRamdom = Math.floor(Math.random() * categoriesData.length);
+    const mathRamdom = Math.floor(Math.random() * 4);
     const categories = categoriesData[mathRamdom];
     const checkCategories = categories == "Todas" ? categoriesData[1] : categories;
     console.log(categories);

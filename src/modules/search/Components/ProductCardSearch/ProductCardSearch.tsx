@@ -23,16 +23,16 @@ export default function ProductCardSearch({ product }: { product: Product }) {
                         <h3>{product.name}</h3>
                     </Link>
                     <Link to={`/details/${product?.id}`} style={{ ...LinkStyles }}>
-                        <p>Lenovo Tab M8 Tablet, 8" HD Android Tablet, Quad-Core Processor, 2GHz, 16GB Storage, Long Battery Life, Android 9 Pie (Refurbished)</p>
+                        <p>{product.name} || {product.note}</p>
                     </Link>
                     <div className="price">
                         <Link to={`/details/${product?.id}`} style={{ ...LinkStyles }}>
                             <span className="current-price">S/ {product.price}</span>
-                            <span className="original-price">S/ 789</span>
+                            <span className="original-price">S/ {product.price * 2}</span>
                             <span className="discount">50% OFF</span>
                         </Link>
                     </div>
-                    <div className="rating">⭐⭐⭐</div>
+                    <div className="rating">{Math.random() * 5 > 3 ? "⭐⭐⭐" : "⭐⭐"}</div>
                 </div>
             </div>
         </Suspense>
