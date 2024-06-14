@@ -1,5 +1,17 @@
 .container {
     display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.dataContainer {
+    width: 70%;
+    display: flex;
     flex-wrap: wrap;
     gap: 20px;
     padding: 20px;
@@ -120,11 +132,13 @@
 }
 
 .coupon button {
+    width: calc(100% - 55px);
     padding: 10px;
     background-color: red;
     color: white;
     border: none;
     cursor: pointer;
+    margin: 10px 0;
 }
 
 .guarantee a {
