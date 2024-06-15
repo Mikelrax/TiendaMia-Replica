@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+
 import { getCategories } from "../../../constant/getCategories";
 
 export interface categoriesProps {
@@ -9,7 +9,7 @@ componentCategories.unshift("Todas");
 
 
 const FilterSearch = ({ setCategories}: categoriesProps) => {
-
+    console.log(setCategories)
     return (
         <div>
             <h2>Categorias</h2>

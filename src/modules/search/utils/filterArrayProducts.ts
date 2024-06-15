@@ -2,7 +2,7 @@ import { Product } from "../Types/Product";
 import { getProducts } from "../../constant/getProducts";
 import { getCategories } from "../../constant/getCategories";
 
-const products: Product[] = getProducts();
+const products: any[] = getProducts();
 const categoriesProducts: string[] = getCategories();
 
 type Category = typeof categoriesProducts[number];

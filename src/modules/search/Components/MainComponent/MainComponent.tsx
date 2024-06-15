@@ -16,11 +16,12 @@ const MainComponent = () => {
     const [products, setProducts] = useState<Product[]>([]);
     const [categories, setCategories] = useState<string[]>([]);
     const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
-
+    const myvoid= () : void => {products}; 
+    console.log(myvoid());
     const resetFilters = () => {
         setCategories([]);
-        setFilteredProducts(productData);
-        setProducts(productData);
+        setFilteredProducts(productData as any[]);
+        setProducts(productData as any[]);
         useSetWindowPath("");
         setSearchTerm("");
     };

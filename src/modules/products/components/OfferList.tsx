@@ -15,7 +15,7 @@ const OfferList = ({ categorie }: OfferListProps) => {
 
     const offersLength = 5;
     var selectedProducts = useRandomProducts(categorie, offersLength);
-    if(categorie === "all"){selectedProducts = products;}
+    if(categorie === "all"){selectedProducts = products as any[];}
     const checkSelectedProducts = selectedProducts ? selectedProducts.length : 0;
     return (
         <div className={styles.offersContainer} style={{ display: `${checkSelectedProducts > 0 ? "" : "none"}` }}>
