@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { toast } from "react-toastify";
 
 const useFavorite = (id: number) => {
-    const resolveAfter1Sec = new Promise(resolve => setTimeout(resolve, 1000));
     const [favorite, setFavorite] = useState(false);
     const [loading, setLoading] = useState(true);
 

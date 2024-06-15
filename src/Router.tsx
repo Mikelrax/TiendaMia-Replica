@@ -19,7 +19,7 @@ const browserRouter = createBrowserRouter([
   { path: "/how-buy", element: <HowBuy /> },
   { path: "checkout/cart", element: <Cart /> },
 ]);
-
+// app.tsx
 function Router() {
 
   return (
