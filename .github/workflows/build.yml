@@ -30,6 +30,6 @@ jobs:
         run: npm run build
 
       - name: Deploy to GitHub Pages
-        run: npm run deploy --base-url /TiendaMia-Replica/
+        run: npm run deploy --base-url /TiendaMia-Replica/build
         env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
