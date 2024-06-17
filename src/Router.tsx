@@ -1,5 +1,5 @@
 //importamos Router para los path y el componente
-import { createHashRouter } from 'react-router-dom';
+import { createBrowserRouter } from 'react-router-dom';
 import { RouterProvider } from 'react-router-dom'
 import Home from './pages/Home/Home'
 import style from './global.module.css'
@@ -12,7 +12,7 @@ import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 import Cart from './pages/Cart/Cart';
 
-const browserRouter = createHashRouter([
+const browserRouter = createBrowserRouter([
   { path: "/", element: <Home /> },
   { path: "/shop", element: <Shop /> },
   { path: "/details/:id", element: <Details /> },
@@ -21,7 +21,8 @@ const browserRouter = createHashRouter([
   { path: "checkout/cart", element: <Cart /> },
 ]);
 
-console.log("hola mundo")
+  
+
 // app.tsx
 function Router() {
 
