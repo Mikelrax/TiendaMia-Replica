@@ -20,6 +20,8 @@ const browserRouter = createHashRouter([
   { path: "/how-buy", element: <HowBuy /> },
   { path: "checkout/cart", element: <Cart /> },
 ]);
+
+console.log("hola mundo")
 // app.tsx
 function Router() {
 
