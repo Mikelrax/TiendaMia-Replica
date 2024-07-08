@@ -3,6 +3,7 @@ import styles from "./PurchaseProduct.module.css";
 import GradeIcon from '@mui/icons-material/Grade';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import useFavorite from "../../Hooks/useFavorite";
+import useAddCart from "../../../checkout/cart/Hooks/useAddCart";
 
 interface PurchaseProductProps {
   id: number;
@@ -12,13 +13,11 @@ interface PurchaseProductProps {
 }
 
 function PurchaseProduct({ id, price, verified, stock }: PurchaseProductProps) {
-
-  console.log(id, price, verified, stock);
-
-  const checkStock = stock === undefined || stock === 0;
+  const checkStock = stock == undefined || stock === 0;
 
   const { favorite, toggleFavorite, loading } = useFavorite(id);
-  console.log(favorite)
+  const { inCart, toggleCartItem } = useAddCart(id);
+
   return (
     <div className={styles["product-card"]}>
       <div className={styles["product-favorite"]}>
@@ -48,8 +47,8 @@ function PurchaseProduct({ id, price, verified, stock }: PurchaseProductProps) {
         <input type="number" id="quantity" name="quantity" defaultValue="1" min="1" max={stock} disabled={checkStock} />
       </div>
       <div className={styles["button-section"]}>
-        <button className={styles["buy-now"]} disabled={checkStock}>Comprar</button>
-        <button className={styles["add-to-cart"]} disabled={checkStock}>Agregar al carrito</button>
+        <button className={styles["buy-now"]} disabled={false}>Comprar</button>
+        <button className={styles["add-to-cart"]} disabled={false} onClick={toggleCartItem}>{inCart ? "Eliminar del carrito" : "Agregar al carrito"}</button>
       </div>
     </div>
   );

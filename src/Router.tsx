@@ -21,7 +21,10 @@ const browserRouter = createBrowserRouter([
   { path: "checkout/cart", element: <Cart /> },
 ]);
 
-  
+// primera pregunta: Axios en el backend, 
+// segunda pregunta: Axios en el frontend
+// tercera pregunta: Cual es mejor, importar el json como objeto, o importar el json con fetch o axios
+
 
 // app.tsx
 function Router() {

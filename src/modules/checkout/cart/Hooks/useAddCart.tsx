@@ -24,7 +24,18 @@ const useAddCart = (id: number) => {
         setLoading(false);
     }, []);
 
+    const getCartItems = () => {
+        const storedCartProducts = localStorage.getItem("cartProducts");
+        if (storedCartProducts) {
+            const cartArray = JSON.parse(storedCartProducts);
+            return cartArray;
+        }
+        setLoading(false);
+    };
+
     const toggleCartItem = () => {
+        setTimeout(() => {
+        console.log("toggleCartItem");
         setLoading(true);
         const storedCartProducts = localStorage.getItem("cartProducts");
         let cartArray = storedCartProducts ? JSON.parse(storedCartProducts) : [];
@@ -41,9 +52,19 @@ const useAddCart = (id: number) => {
         localStorage.setItem("cartProducts", JSON.stringify(cartArray));
         setCartItems(cartArray);
         setLoading(false);
+    }, 500);
     };
 
-    return { inCart, toggleCartItem, loading, cartItems };
+    const deleteCart = () => {
+        setLoading(true);
+        localStorage.removeItem("cartProducts");
+        setCartItems([]);
+        setInCart(false);
+        toast.success("Carrito eliminado");
+        setLoading(false);
+    };
+
+    return { inCart, toggleCartItem, loading, cartItems, deleteCart, getCartItems};
 };
 
 export default useAddCart;

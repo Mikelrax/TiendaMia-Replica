@@ -3,7 +3,6 @@ import productsData from "../../../../public/products-store.json";
 import categoriesData from "../../../../public/products-categories.json";
 
 const categories: string[] = categoriesData.categories;
-console.log(categories);
 type Category = typeof categories[number];
 
 interface Product {
@@ -15,7 +14,6 @@ interface Product {
 }
 
 const useRandomProducts = (categorie: Category, offersLength: number) => {
-    console.log("hl");
     const [selectedProducts, setSelectedProducts] = useState<Product[]>([]);
 
     useEffect(() => {

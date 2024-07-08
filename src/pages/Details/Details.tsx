@@ -22,7 +22,6 @@ const Details = () => {
     const mathRamdom = Math.floor(Math.random() * 4);
     const categories = categoriesData[mathRamdom];
     const checkCategories = categories == "Todas" ? categoriesData[1] : categories;
-    console.log(categories);
 
     if (!data) return <div>No data found: id={id} : error 404</div>;
 
