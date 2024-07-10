@@ -11,6 +11,8 @@ interface OfferListProps {
     categorie: Category;
 }
 
+
+
 const OfferList = ({ categorie }: OfferListProps) => {
 
     const offersLength = 5;

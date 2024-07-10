@@ -1,6 +1,5 @@
 // CartPrice.js
 import style from './CartPrice.module.css';
-
 export default function CartPrice() {
     return (
         <div className={style['order-summary']}>

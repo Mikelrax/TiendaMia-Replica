@@ -29,7 +29,7 @@ export default function CartList() {
             <div className={style.dataContainer}>
                 <div className={style.products}>
                     <div className={style['product-header']}>
-                        <span className={style['delivery-info']}><center>Entrega: recibe estos productos todos juntos en un único paquete</center></span>
+                        <span className={style['delivery-info']}><center>Entrega: recibe estos productos todos juntos en un único paquete<hr></hr></center></span>
                     </div>
                     {products.map((product) => (
                         <CartProducts
@@ -38,6 +38,7 @@ export default function CartList() {
                             name={product.name}
                             price={product.price}
                             image={product.image}
+                            note={product.note}
                         />
                     ))}
                 </div>

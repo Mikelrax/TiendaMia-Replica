@@ -142,7 +142,7 @@
 }
 
 .product-actions .favorite-icon {
-    color: gray;
+    color: red;
     width: 25px;
     height: auto;
     padding: 10px;

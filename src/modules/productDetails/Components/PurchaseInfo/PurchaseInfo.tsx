@@ -4,7 +4,6 @@ const PurchaseInfo = ({ data }: any) => {
 
     const checkVerified = data.verified !== undefined && data.verified !== false;
     const checkStock = data.stock !== undefined && data.stock !== 0;
-
     console.log(data);
     return (
         <>
