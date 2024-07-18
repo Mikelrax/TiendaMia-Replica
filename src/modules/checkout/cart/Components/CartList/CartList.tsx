@@ -7,7 +7,7 @@ import getDataById from '../../../../productDetails/utils/getDataById';
 import { useEffect, useState } from 'react';
 
 export default function CartList() {
-    const { getCartItems } = useAddCart(1);
+    const { getCartItems, loading } = useAddCart(1);
     const [products, setProducts] = useState<any[]>([]);
     const cartItems = getCartItems();
 
@@ -23,6 +23,10 @@ export default function CartList() {
     useEffect(() => {
         getProducts();
     }, [cartItems]);
+
+    if (loading) return <div>Loading...</div>;
+
+    if (products.length === 0) return <div>Recuerda agregar algunos productos al carrito para poder verlos aquí</div>;
 
     return (
         <div className={style.container}>
