@@ -12,7 +12,7 @@ export default function CartList() {
     const cartItems = getCartItems();
 
     const getProducts = async () => {
-        try {
+        try { 
             const productsData = await Promise.all(cartItems.map((cartItem: number) => getDataById(cartItem)));
             setProducts(productsData);
         } catch (error) {

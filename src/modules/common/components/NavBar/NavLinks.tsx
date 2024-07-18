@@ -9,7 +9,7 @@ type Props = {
 const NavLinks = ({ title, link }: Props) => {
   return (
     <li className={styles["nav-li"]}>
-      <Link className={styles["nav-a"] + " " + styles["nav-link"]} to={link}>
+      <Link className={styles["nav-a"] + " " + styles["nav-link"]} to={link} target={title === "Mis pedidos" ? "_blank" : ""}>
         {title}
       </Link>
     </li>

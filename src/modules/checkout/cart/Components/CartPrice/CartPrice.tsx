@@ -1,4 +1,5 @@
 // CartPrice.js
+import CodeDiscount from '../CodeDiscount/CodeDiscount';
 import style from './CartPrice.module.css';
 export default function CartPrice() {
     return (
@@ -20,11 +21,7 @@ export default function CartPrice() {
             </div>
             <button className={style['checkout-button']}>Finalizar compra</button>
             <button className={style['continue-button']}>Continúa comprando y ahorra en tu envío</button>
-            <div className={style.coupon}>
-                <p>¿Tienes un cupón de descuento?</p>
-                <input type="text" placeholder="Digita el código de tu cupón aquí" />
-                <button>aplicar</button>
-            </div>
+            <CodeDiscount />
             <div className={style.guarantee}>
                 <p>Garantía de Entrega</p>
                 <p>Todas tus compras tienen garantía de entrega</p>

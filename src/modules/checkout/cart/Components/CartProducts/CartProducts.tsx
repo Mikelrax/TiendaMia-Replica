@@ -5,6 +5,8 @@ import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import { useQuantity } from '../../Hooks/useQuantity';
 import useFavorite from '../../../../productDetails/Hooks/useFavorite';
 import { Favorite } from '@mui/icons-material';
+import useAddCart from '../../Hooks/useAddCart';
+
 interface CartProductProps {
     id: number;
     name: string;
@@ -16,6 +18,11 @@ interface CartProductProps {
 export default function CartProducts({ id, name, price, image, note }: CartProductProps) {
     const { quantity, increment, decrement } = useQuantity({ initialValue: 1 });
     const { favorite, toggleFavorite, loading } = useFavorite(id);
+    const { toggleCartItem } = useAddCart(id);
+
+    const handleQuantityChange = () => {
+        console.log(quantity);
+    };
 
     return (
         <div className={style.products} id={id.toString()}>
@@ -27,7 +34,7 @@ export default function CartProducts({ id, name, price, image, note }: CartProdu
                     <div className={style['product-actions']}>
                         <div className={style["product-quantity"]}>
                             <button onClick={decrement}>-</button>
-                            <input type="text" min="1" max="5" value={quantity} />
+                            <input type="text" min="1" max="5" value={quantity} onChange={handleQuantityChange} />
                             <button onClick={increment}>+</button>
                         </div>
                         <button onClick={toggleFavorite} disabled={loading} className={style["favorite-button"]}>
@@ -37,7 +44,7 @@ export default function CartProducts({ id, name, price, image, note }: CartProdu
                                 <FavoriteBorderIcon className={style["favorite-icon"] + " " + style["favorite-icon-loading"]} />
                             }
                         </button>
-                        <button><DeleteOutlineIcon className={style['trash-icon']} /></button>
+                        <button onClick={toggleCartItem}><DeleteOutlineIcon className={style['trash-icon']} /></button>
                     </div>
                 </div>
                 <div className={style['product-price']}>S/ {price}</div>

@@ -1,0 +1,21 @@
+.coupon p {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+.coupon input {
+    width: calc(100% - 80px);
+    padding: 10px;
+    margin-right: 10px;
+}
+
+.coupon button {
+    width: calc(100% - 55px);
+    padding: 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin: 10px 0;
+}
